@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../images/Spotify_favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        input[type="text"] {
+            width: 100%; /* Chiều rộng 100% để ô nhập trải dài toàn trang */
+            padding: 10px; /* Padding để tạo khoảng cách cho nội dung */
+            border: 1px solid #ccc; /* Đường viền */
+            border-radius: 5px; /* Bo tròn góc */
+            box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước */
+            color: #fff;
+            font-size: 14px;
+        }
+        
+
+        .sidebar .policies {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            margin: 0;
+            padding: 24px;
+            list-style-type: none;
+        }
+
+        /* Styling cho navbar */
+        .navbar {
+            padding: 16px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .topbar {
+            padding: 0 !important;
+        }
+
+        .prev-next-buttons {
+            z-index: -1;
+        }
+
+        /* Styling cho nút Profile */
+        #profile-btn {
+            margin: 0;
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            padding: 10px 12px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        #profile-btn img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #282828;
+            min-width: 200px;
+            right: 0;
+            top: 100%;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .dropdown-content li {
+            list-style: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #b3b3b3;
+        }
+
+        .dropdown-content li a {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .dropdown-content li a:hover {
+            transform: none;
+            font-size: 14px !important;
+        }
+
+        .dropdown-content li:hover {
+            background-color: #3e3e3e;
+            color: #fff;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .topbar .navbar ul li {
+            display: inline-block;
+            margin: 0px;
+            width: 100%;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #ccc;
+            margin: 0;
+            color: #000;
+        }
+
+        /* Styles for search section */
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #121212;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            color: #9fc9c9;
+            padding: 10px 10px 20px;
+        }
+
+        
+
+        .songs {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #121212;
+        }
+
+        .song-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .song {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #000000;
+        }
+
+        .song h3 {
+            margin: 10px 0;
+            color: #9fc9c9;
+        }
+
+        .song p {
+            margin: 10px 0;
+            color: #9fc9c9;
+        }
+
+        .song a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <a href="">
+                <img src="../images/Spotify Logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="fa fa-home"></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="fa fa-search"></span>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="fa fas fa-book"></span>
+                        <span>Your Library</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="fa fa-home"></span>
+                        <span>Create Playlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="fa fa-search"></span>
+                        <span>Liked Songs</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="policies">
+            <ul>
+                <li>
+                    <a href="">Cookies</a>
+                </li>
+                <li>
+                    <a href="">Privacy</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="topbar">
+            <div class="prev-next-buttons">
+                <button type="button" class="fa fas fa-chevron-left"></button>
+                <button type="button" class="fa fas fa-chevron-right"></button>
+            </div>
+
+            <div class="navbar">
+                <div class="dropdown">
+                    <button id="profile-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <ul class="dropdown-content">
+                        <li href="#">Account</li>
+                        <li href="#">Profile</li>
+                        <li href="#">Upgrade to Premium</li>
+                        <li href="#">Setting</li>
+                        <div class="divider"></div>
+                        <li><a href="/templates/home.html">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần tìm kiếm bài hát -->
+        <div class="container">
+            <h2>Welcome, {{ username }}</h2>
+            <form action="/home" method="get">
+                <input type="text" id="query" name="query" required style="width: 100%; background-color: #1f1f1f; padding: 14px; border: 1px solid #ccc; border-radius: 28px; box-sizing: border-box;">
+                <input type="hidden" name="username" value="{{ username }}">
+                <input type="hidden" name="token" value="{{ token }}">
+            </form>
+            <div class="songs">
+                {% if songs %}
+                <ul class="song-list">
+                    {% for song in songs %}
+                    <li class="song">
+                        <h3>{{ song.track }}</h3>
+                        <p>Artist: {{ song.artist | capitalize }}</p>
+                        <div class="spotify-player">
+                            <iframe src="https://open.spotify.com/embed/track/{{ song.uri | replace('spotify:track:', '') }}"
+                                width="100%" height="80" frameborder="0" allowtransparency="true" 
+                                allow="encrypted-media">
+                            </iframe>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/ef9a692198.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
